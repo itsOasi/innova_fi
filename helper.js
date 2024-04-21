@@ -14,4 +14,16 @@ let http = {
 
 }
 
+export function show_note(message="test message", title=""){
+	console.log(message);
+	let notification = document.querySelector("#notification");
+	document.querySelector("#note_message").innerHTML = message;
+	document.querySelector("#note_title").innerHTML = title;
+	document.querySelector("#note_close").onclick = hide_note;
+	notification.classList.add("visible");
+}
+export function hide_note(){
+	notification.classList.remove("visible");
+}
+
 export default http

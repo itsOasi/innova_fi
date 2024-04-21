@@ -1,14 +1,15 @@
 import http from './helper.js';
 import GenericApp from './generic_app.js';
+import GoalApp from './goal_app.js';
 
 const payment_host = "https://payment-server-2jochkae6a-uc.a.run.app";
 
 let apps = {
 	"budgets": {...GenericApp },
 	"income": {...GenericApp },
+	"goals": {...GoalApp},
 	"support": {...GenericApp}
 };
-
 let saved_data = JSON.parse(localStorage.getItem("InnovaFi_data")) || {};
 
 ////////////////////////////////////////////
@@ -121,6 +122,7 @@ apps.budgets.calculate_budgets = function(){
 apps.income.setup = function(root_id){
 		this._set_root(root_id);
 		this._add_vbox("income_body");
+	    this._add_element("title", "b", "Your Income", "income_body")
 		this._add_vbox("income_list", "income_body");
 		this._add_hbox("input_panel", "income_body", ["full_width", "space_between"]);
 		this._add_element("new_income_name", "input", "Income Source", "input_panel");
@@ -198,9 +200,11 @@ document.body.onload = function(){
 	document.querySelector("#budgets").onclick = _ => {switch_app("budgets");};
 	document.querySelector("#income").onclick = _ => {switch_app("income");};
 	document.querySelector("#support").onclick = _ => {switch_app("support");};
+	document.querySelector("#goals").onclick = _ => {switch_app("goals");};
+
 }
 
-function show_note(message="test message", title=""){
+export default function show_note(message="test message", title=""){
 	console.log(message);
 	let notification = document.querySelector("#notification");
 	document.querySelector("#note_message").innerHTML = message;

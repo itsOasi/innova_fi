@@ -127,11 +127,11 @@ var GenericApp = {
                         console.log(JSON.stringify(list_data));
                 };
         },
-        save: function(key){
-                this.data = {...this.data}
+        update_data: function(id, value){
+                this.data[id+"_value"] = value
         },
-        load: function(key){
-                this.data[key] = {...this.data}
+        get_data: function(id){
+                return this.data[id+"_value"]
         },
 }
 

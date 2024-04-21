@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script defer src="./script.js" type="module"></script>
+	<script defer src="./script.js" type="module" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" defer></script>
 	<link rel="stylesheet" href="./style.css">
 	<title>Innova Fi</title>
 </head>
@@ -18,7 +19,7 @@
 	<nav id="navbar" class="hbox">
 		<button id="budgets" class="menu_button">Your Budgets</button>
 		<button id="income" class="menu_button">Your Income</button>
-		<button class="menu_button disabled">Your Goals (Coming Soon!)</button>
+		<button id="goals" class="menu_button disabled">Your Goals (Coming Soon!)</button>
 	</nav>
 	<div id="content" class="hbox center">
 		<div id="app_root" class="panel"></div>
