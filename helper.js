@@ -1,4 +1,4 @@
-let http = {
+export let http = {
         get: async(url) =>
         {
                 let res = await fetch(url)
@@ -26,4 +26,9 @@ export function hide_note(){
 	notification.classList.remove("visible");
 }
 
-export default http
+export function get_random_int(max){
+    return Math.floor(Math.random() * max)
+}
+
+var dev_mode = false;
+export default dev_mode

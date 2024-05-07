@@ -1,42 +1,23 @@
 import GenericApp from './generic_app.js';
 import show_note from './helper.js'
-let GoalApp = {...GenericApp}
+let ComingSoon = {...GenericApp}
 let saved_data = JSON.parse(localStorage.getItem("goals")) || null
 
-GoalApp.setup = function(root_id){
+ComingSoon.setup = function(root_id){
 	this._set_root(root_id);
 	this._add_swapbox("body")
-	this._add_data_element("title", "b", "Your Goals", "body")
-	this._add_vbox("left", "body")
-    this._add_vbox("right", "body")
-    this._add_element("display",  "div", "", "right")
-	this._add_data_element("goals_list", "div", [], "left")
-	this.p5 = new p5(this.sketch);
-	this.update();
-	this._add_button("add_goal", "+", ()=>{this.add_goal()}, 
-		null, ["menu_button", "outline", "center"]);
-	this._add_button("save", "💾", function(){
-		saved_data = {...this.data};
-		localStorage.setItem("goals", JSON.stringify(saved_data));
-		console.log(saved_data);
-		show_note("Your data was saved! Please consider supporting us so we can make our products better", "Success!");
-	}, null, ["menu_button", "outline", "center"]);
-		if (saved_data){
-			this.data = {...saved_data};
-		}else{
-			this.data = {
-			    goals_list: []
-			}
-		}
+	this._add_data_element("title", "b", "Your Goals (Coming Soon!)", "body")
+    this._add_element("desc1", "p", "Set goals, update them, and visually see your progress", "body")
+	    this._add_element("desc2", "p", "", "body")
 	
 }
 
-GoalApp.update = function() {
+ComingSoon.update = function() {
     this._build_list("goals_list",  this.data.goals_list, ["space_between"], ["theme_text", "menu_button", "outline"])
 
 }
 
-GoalApp.add_goal = function(){
+ComingSoon.add_goal = function(){
 	this._add_element("goal_form", "div", "",  "body")
     this._add_element("goal_name", "input", "Give your goal a name", "goal_form")
 	this._add_element("goal_metric", "input", "What metric are you trying to improve?", "goal_form")
@@ -60,7 +41,7 @@ GoalApp.add_goal = function(){
 }
 
 // Define a new instance of p5
-GoalApp.sketch = (sketch) => {
+ComingSoon.sketch = (sketch) => {
   let x = 100;
   let y = 100;
 
@@ -76,12 +57,12 @@ GoalApp.sketch = (sketch) => {
   };
 };
 
-GoalApp.save = function() {
+ComingSoon.save = function() {
 	localStorage.setItem("goals", this.data) || {};
 }
 
-GoalApp.load = function(){
+ComingSoon.load = function(){
 	this.data = JSON.parse(localStorage.getItem("goals")) || {};
 }
 
-export default GoalApp
+export default ComingSoon
