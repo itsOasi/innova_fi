@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src="./script.js" type="module"></script>
-        <link rel="stylesheet" href="./style.css">
-        <title>Innova Fi</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script defer src="./script.js" type="module" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js" defer></script>
+	<link rel="stylesheet" href="./style.css">
+	<title>Innova Fi</title>
 </head>
+
 <body>
-    <div id="header" class="space_between">
-        <b id="title" class="title theme_text">Innova Fi</b>
-        <button id="support" class="menu_button theme_text">Support Us</button>
-    </div>
-    <nav id="navbar" class="hbox">
-            <div class="vcenter">Apps:</div>
-            <button id="budgets" class="menu_button">Budgets</button>
-            <button id="income" class="menu_button">Income</button>
-            <div class="vcenter disabled">Coming Soon:</div>
-            <p id="budgets" class="menu_button disabled">Goals!</p>
-    </nav>
-    <div id="content" class="hbox center">
-        <div id="app_root" class="panel"></div>
-    </div>
-
-    <div id="notification" class="panel center">
-        <div>  
-            <h3 id="note_title" class="title theme_text"></h3>
-            <p id="note_message"></p>
-        </div>
-        <button id="note_close" class="menu_button theme_text">x</button>
-    </div>
+	<div id="header" class="space_between">
+		<b id="title" class="title theme_text">Innova Fi</b>
+		<button id="support" class="menu_button theme_text">Support Us</button>
+		<!--<button id="clear" class="menu_button theme_text">Clear Storage</button> -->
+	</div>
+	<div id="content" class="hbox center">
+		<div id="app_root" class="panel"></div>
+	</div>
+	<br />
+    <br />
+	<nav id="navbar" class="hbox space_between">
+		<button id="budgets" class="menu_button">💰</button>
+		<button id="income" class="menu_button">🏠</button>
+		<button id="goals" class="menu_button disabled">🎯</button>
+	</nav>
+	<div id="notification" class="panel center">
+		<div>
+			<h3 id="note_title" class="title theme_text"></h3>
+			<p id="note_message"></p>
+		</div>
+		<button id="note_close" class="menu_button theme_text">x</button>
+	</div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-

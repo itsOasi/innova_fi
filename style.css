@@ -1,25 +1,26 @@
 :root{
-    --theme: #11a311;
+    --theme: #353;
     --section: rgba(0,0,0,0.2);
     --text-main: #d9d9d9;
     --font-size: 16pt;
+	--background: #1e1e1e;
 }
 body{
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: var(--background);
     color: var(--text-main);
         font-family: monospace, sans-serif;
         font-size: var(--font-size);
 }
 .hbox{
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     align-items:center;
     gap: 1em;
 }
 .vbox{
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 1em;
 }
 .hidden{
@@ -66,6 +67,9 @@ body{
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 }
+#navbar{
+	display: flex;
+}
 #content{
     display: flex;
     position: absolute;
@@ -82,17 +86,17 @@ body{
     border: 3px solid var(--theme);
 }
 .outline.menu_button{
-        color: var(--theme);
+    color: var(--theme);
 }
 .space_between{
-        display: flex;
-        justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 .full_width{
-        width: 100%;
+    width: 100%;
 }
 .disabled{
-        opacity: 50%;
+    opacity: 50%;
 }
 #input_panel{
     display:flex;
@@ -120,11 +124,11 @@ button#send{
     color: var(--theme);
 }
 button{
-        transition: all .5s smooth;
+    transition: all .5s smooth;
 }
 button:hover{
-        scale: 103%;
-        cursor: pointer;
+    scale: 103%;
+    cursor: pointer;
 }
 #chat_column{
     grid-area: chat;
@@ -142,7 +146,7 @@ button:hover{
     background-color: #111;
     position: absolute;
     width: 60vw;
-    bottom: 1em;
+    top: 1rem;
     transition: 1s cubic-bezier;
 }
 #notification.visible{
@@ -157,12 +161,12 @@ button:hover{
     align-self: flex-start;
 }
 #lists{
-        align-items: start;
+    align-items: start;
 }
 @media screen and (min-width: 800px){
-        .swapbox{
-                flex-direction: row;
-        }
+    .swapbox{
+        flex-direction: row;
+    }
     body{
         margin: 1em;
     }
@@ -183,7 +187,8 @@ button:hover{
                 flex-direction: column;
         }
         #app_root{
-                width: 100vw;
+            width: 100vw;
+			margin-bottom: 5rem;
         }
         .panel{
                 padding: 1em;
@@ -191,4 +196,16 @@ button:hover{
     #history_column{
         display: none;
     }
+	#navbar{
+        width: 100%;
+		display: flex;
+		align-items: space-between;
+		position: fixed;
+		bottom: 0;
+		background-color: var(--background);
+		&>*{
+			margin: 1rem 1rem;
+			font-size:2rem;
+		}
+	}
 }
